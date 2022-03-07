@@ -38,7 +38,6 @@ class Solution:
         :param l2:
         :return:
         """
-
         resultList = ListNode(l1.val + l2.val)
         rt, tp = resultList, resultList
         while (l1 and (l1.next != None)) or (l2 and (l2.next != None)) or (tp.val > 9):
