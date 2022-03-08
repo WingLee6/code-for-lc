@@ -2,7 +2,7 @@
 # @Time    : 2022/1/1 
 # @Author  : li
 # @FileName: q1_twoSum.py
-# @Desc    :
+# @Desc    : 两数之和
 
 
 """
