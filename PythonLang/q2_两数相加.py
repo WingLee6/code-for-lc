@@ -38,14 +38,14 @@ class Solution:
         :param l2:
         :return:
         """
-        resultList = ListNode(l1.val + l2.val)
-        rt, tp = resultList, resultList
+        result_listNode = ListNode(l1.val + l2.val)
+        rt, tp = result_listNode, result_listNode
         while (l1 and (l1.next != None)) or (l2 and (l2.next != None)) or (tp.val > 9):
             l1 = l1.next if l1 else l1              # 如果l1（if后的判断）存在则l1=l1.next，否则l1=l1
             l2 = l2.next if l2 else l2
 
-            tmpSum = (l1.val if l1 else 0) + (l2.val if l2 else 0)
-            tp.next = ListNode(tp.val // 10 + tmpSum)
+            tmp_sum_int = (l1.val if l1 else 0) + (l2.val if l2 else 0)
+            tp.next = ListNode(tp.val // 10 + tmp_sum_int)
             tp.val %= 10
             tp = tp.next
         return rt
@@ -57,12 +57,12 @@ class Solution:
 # 主函数
 if __name__ == "__main__":
     # Step1: 构建两个测试链表，不带头结点
-    l1List = [2, 4, 3]
-    l2List = [5, 6, 4]
-    l1 = BasicOperations.LinkList().init_tail_insert(data=l1List)
-    l2 = BasicOperations.LinkList().init_tail_insert(data=l2List)
+    l1_list = [2, 4, 3]
+    l2_list = [5, 6, 4]
+    l1_listNode = BasicOperations.LinkList().initTailInsert(data=l1_list)
+    l2_listNode = BasicOperations.LinkList().initTailInsert(data=l2_list)
 
     # Step2. 将链表带入算法
-    resultList = Solution().addTwoNumbers(l1=l1, l2=l2)
-    BasicOperations.LinkList().travel_list(resultList)
+    result_listNode = Solution().addTwoNumbers(l1=l1_listNode, l2=l2_listNode)
+    BasicOperations.LinkList().travelList(result_listNode)
 

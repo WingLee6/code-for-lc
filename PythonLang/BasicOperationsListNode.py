@@ -42,7 +42,7 @@ class LinkList(object):
         """
         self.head = None
 
-    def init_head_insert(self, data: List[int]) -> ListNode:
+    def initHeadInsert(self, data: List[int]) -> ListNode:
         """
         初始化单链表头插法
         :param data: 列表类型
@@ -57,7 +57,7 @@ class LinkList(object):
 
         return self.head
 
-    def init_tail_insert(self, data: List[int]) -> ListNode:
+    def initTailInsert(self, data: List[int]) -> ListNode:
         """
         初始化单链表尾插法
         :param data:
@@ -73,7 +73,7 @@ class LinkList(object):
 
         return self.head
 
-    def head_insert(self, data: int) -> ListNode:
+    def headInsert(self, data: int) -> ListNode:
         """
         单链表头插法
         :param data: 列表类型
@@ -85,7 +85,7 @@ class LinkList(object):
 
         return self.head
 
-    def tail_insert(self, data: int) -> ListNode:
+    def tailInsert(self, data: int) -> ListNode:
         """
         单链表尾插法
         :param data:
@@ -100,7 +100,7 @@ class LinkList(object):
 
         return self.head
 
-    def get_elem(self, l: ListNode, i: int) -> Type[ListNode]:
+    def getElem(self, l: ListNode, i: int) -> Type[ListNode]:
         """
         获取第i个结点（如果有）
         :param i:
@@ -120,7 +120,7 @@ class LinkList(object):
 
 
 
-    def travel_list(self, l: ListNode):
+    def travelList(self, l: ListNode):
         """
         遍历链表
         :return:
