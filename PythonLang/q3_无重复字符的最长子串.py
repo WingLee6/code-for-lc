@@ -115,7 +115,7 @@ if __name__ == '__main__':
     # test_s = 'bbbbb'          # 1
     # test_s = 'abcab cbb'      # 4
     # test_s = ' '              # 1
-    # test_s = ''               # 1
+    # test_s = ''               # 0
     # test_s = 'asdasdasdasd'   # 3
 
 

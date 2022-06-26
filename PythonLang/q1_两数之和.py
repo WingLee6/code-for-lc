@@ -30,8 +30,8 @@ class Solution:
         return []
 
 
-# 主函数
-nums = [2, 7, 11, 15]
-solution = Solution()
-result = solution.twoSum(nums=nums, target=9)
-print(result)
+if __name__ == '__main__':
+    nums = [2, 7, 11, 15]
+    solution = Solution()
+    result = solution.twoSum(nums=nums, target=9)
+    print(result)

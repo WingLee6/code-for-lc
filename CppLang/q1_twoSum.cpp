@@ -23,13 +23,13 @@ public:
 		for (int i = 0; i < nums.size(); i++)
 		{
 			for (int j = i+1; j < nums.size(); j++)
-			{	
+			{
 				if (target == nums[i]+nums[j])
 				{
 					result.push_back(i);
 					result.push_back(j);
 					return result;
-				}	
+				}
 			}
 		}
 		// 没找到返回空结果
@@ -60,4 +60,5 @@ int main(){
 	for(int i=0; i<position.size(); i++)
 		cout << position[i] << endl;
 	return 0 ;
+
 }
