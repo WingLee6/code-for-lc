@@ -15,7 +15,6 @@
 
 """
 
-
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
         # 若最后字符为空格，则删除
