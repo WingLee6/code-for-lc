@@ -32,12 +32,14 @@ class operations_bi_tree:
         pre_order_visit: 列表，表示二叉树的前序遍历序列
         in_order_visit: 列表，表示二叉树的中序遍历序列
         post_order_visit: 列表，表示二叉树的后序遍历序列
+        level_order_visit: 列表，表示二叉树的层次遍历序列
     """
     def __init__(self):
         self.tree_root = None
         self.pre_order_visit = []
         self.in_order_visit = []
         self.post_order_visit = []
+        self.level_order_visit = []
 
     def leetcode_level_build_tree(self, tree_val: List[int]) -> Optional[TreeNode]:
         """[LeetCode特殊层次遍历序列] 转 [二叉树]
@@ -143,14 +145,35 @@ class operations_bi_tree:
             self.post_order(root=root.right)
             self.post_order_visit.append(root.val)
 
+    def level_order(self, root: Optional[TreeNode]):
+        """层次遍历二叉树
+
+        队列实现层次遍历二叉树
+
+        :param root: None或Optional[TreeNode]类型，树的根结点（即，二叉树），默认为空树None
+        :return:
+        """
+        if not root:
+            return 0
+
+        node_queue = [root]
+        while node_queue:
+            p = node_queue[0]
+            node_queue.pop(0)
+            if p.left:
+                node_queue.append(p.left)
+            if p.right:
+                node_queue.append(p.right)
+
+            self.level_order_visit.append(p.val)
+
 
 if __name__ == '__main__':
-    # root_list = [1, None, 2, 3, 9, 11]
+    root_list = [1, None, 2, 3, 9, 11]
     # root_list = [1, None, 2, 3]
     # root_list = [1]
     # root_list = []
-
-    root_list = [1, 2, 3, 4, None, 5, 6, None, None, None, 7, 8, None]
+    # root_list = [1, 2, 3, 4, None, 5, 6, None, None, None, 7, 8, None]
 
     root = operations_bi_tree()
     root.leetcode_level_build_tree(tree_val=root_list)
@@ -164,11 +187,15 @@ if __name__ == '__main__':
     root.post_order(root=root.tree_root)
     print(root.post_order_visit)
 
+    root.level_order(root=root.tree_root)
+    print(root.level_order_visit)
+
 """
 示例1：
 输入：
 [28, 28, null, 50, 67, 88, 64, null, 53, 42, 60, 1, 42, null, 96, 76, 47, 6, 47, 19, 61, 95, 16, 86, 19, 93, 20, 82, 45, 23, 0, 7, 31, 21, null, 37, 64, 86, 8, 16, 58, 19, 84, 64, 7, 50, 57, 90, 84, 19, null, 33, null, 16, 96, null, 23, 29, 74, 35, 69, 91, 40, 15, 93, 5, 6, 95, 48, 32, 64, null, 65, 68, 58, 33, 74, 12, 60, 15, 84, 53, 10, 26, 32, 94, 32, 63, 56, 47, 87, 61, 28, 61, 26, null, 39, 95, 13, 46]
-[28, 28, None, 50, 67, 88, 64, None, 53, 42, 60, 1, 42, None, 96, 76, 47, 6, 47, 19, 61, 95, 16, 86, 19, 93, 20, 82, 45, 23, 0, 7, 31, 21, null, 37, 64, 86, 8, 16, 58, 19, 84, 64, 7, 50, 57, 90, 84, 19, None, 33, None, 16, 96, null, 23, 29, 74, 35, 69, 91, 40, 15, 93, 5, 6, 95, 48, 32, 64, None, 65, 68, 58, 33, 74, 12, 60, 15, 84, 53, 10, 26, 32, 94, 32, 63, 56, 47, 87, 61, 28, 61, 26, None, 39, 95, 13, 46]
+[28, 28, None, 50, 67, 88, 64, None, 53, 42, 60, 1, 42, None, 96, 76, 47, 6, 47, 19, 61, 95, 16, 86, 19, 93, 20, 82, 45, 23, 0, 7, 31, 21, None, 37, 64, 86, 8, 16, 58, 19, 84, 64, 7, 50, 57, 90, 84, 19, None, 33, None, 16, 96, None, 23, 29, 74, 35, 69, 91, 40, 15, 93, 5, 6, 95, 48, 32, 64, None, 65, 68, 58, 33, 74, 12, 60, 15, 84, 53, 10, 26, 32, 94, 32, 63, 56, 47, 87, 61, 28, 61, 26, None, 39, 95, 13, 46]
+
 
 输出：
 中序遍历：
