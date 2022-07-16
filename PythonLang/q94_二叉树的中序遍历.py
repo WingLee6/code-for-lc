@@ -16,7 +16,8 @@
 
 
 from typing import List, Optional
-from PythonLang.Tools.BasicOperationsTreeNode import optional_tree as OT
+from PythonLang.Tools.operations_tree import operations_bi_tree
+
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -28,24 +29,24 @@ class TreeNode:
 
 class Solution:
 
-    def in_order(self, root: Optional[TreeNode], visit: List[int]) -> List[int]:
+    def _in_order(self, root: Optional[TreeNode], visit: List[int]) -> List[int]:
         if root:
-            self.in_order(root=root.left, visit=visit)
+            self._in_order(root=root.left, visit=visit)
             visit.append(root.val)
-            self.in_order(root=root.right, visit=visit)
+            self._in_order(root=root.right, visit=visit)
         return visit
 
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        return self.in_order(root=root, visit=[])
+        return self._in_order(root=root, visit=[])
 
 
 if __name__ == '__main__':
     root_list = [1, None, 2, 3]
-    root = OT()
+    root = operations_bi_tree()
     root.leetcode_level_build_tree(tree_val=root_list)
 
     solution = Solution()
-    result = solution.inorderTraversal(root=root.t_root)
+    result = solution.inorderTraversal(root=root.tree_root)
     print(result)
 
 """

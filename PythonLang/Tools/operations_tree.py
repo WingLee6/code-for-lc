@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2022/7/15 12:15 AM
 # @Author  : lee
-# @FileName: BasicOperationsTreeNode.py
-# @Desc    :
+# @FileName: operations_tree.py
+# @Desc    : 树的基本操作
 
-# Definition for a binary tree node.
-from random import random
+
 from typing import List, Optional
 
 
+# Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -17,8 +17,8 @@ class TreeNode:
         self.node_queue = []
 
 
-class optional_tree:
-    """树的基本操作
+class operations_bi_tree:
+    """二叉树的基本操作
 
     方法：
     leetcode_level_build_tree:  [LeetCode特殊层次遍历序列] 转 [二叉树]
@@ -28,13 +28,13 @@ class optional_tree:
 
 
     Attributes:
-        t_root: None或Optional[TreeNode]类型，树的根结点（即，二叉树），默认为空树None
+        tree_root: None或TreeNode类型，树的根结点（即，二叉树），默认为空树None
         pre_order_visit: 列表，表示二叉树的前序遍历序列
         in_order_visit: 列表，表示二叉树的中序遍历序列
         post_order_visit: 列表，表示二叉树的后序遍历序列
     """
     def __init__(self):
-        self.t_root = None
+        self.tree_root = None
         self.pre_order_visit = []
         self.in_order_visit = []
         self.post_order_visit = []
@@ -48,7 +48,7 @@ class optional_tree:
         :return:
         """
 
-        def add():
+        def _add_treenode():
             """增加孩子结点和叶子结点
 
             利用队列完成二叉树的建立
@@ -84,15 +84,15 @@ class optional_tree:
             return None
 
         # 若为非空列表，初始化树的根结点
-        self.t_root = TreeNode()
-        self.t_root.val = tree_val[0]
+        self.tree_root = TreeNode()
+        self.tree_root.val = tree_val[0]
         tree_val.pop(0)
         # 初始化队列，存放树的结点
-        node_queue = [self.t_root]
+        node_queue = [self.tree_root]
 
         # 循环增加分支结点，直至队列为空
         while node_queue:
-            add()
+            _add_treenode()
             # print("-------self.node_queue--------")
             # for i in self.node_queue:
             #     if i:
@@ -152,16 +152,16 @@ if __name__ == '__main__':
 
     root_list = [1, 2, 3, 4, None, 5, 6, None, None, None, 7, 8, None]
 
-    root = optional_tree()
+    root = operations_bi_tree()
     root.leetcode_level_build_tree(tree_val=root_list)
 
-    root.in_order(root=root.t_root)
+    root.in_order(root=root.tree_root)
     print(root.in_order_visit)
 
-    root.pre_order(root=root.t_root)
+    root.pre_order(root=root.tree_root)
     print(root.pre_order_visit)
 
-    root.post_order(root=root.t_root)
+    root.post_order(root=root.tree_root)
     print(root.post_order_visit)
 
 """

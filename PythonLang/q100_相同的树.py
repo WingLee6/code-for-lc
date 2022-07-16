@@ -18,7 +18,7 @@
 """
 
 # Definition for a binary tree node.
-from PythonLang.Tools.BasicOperationsTreeNode import optional_tree
+from PythonLang.Tools.operations_tree import operations_bi_tree
 
 
 class TreeNode:
@@ -40,15 +40,15 @@ class Solution:
 
 if __name__ == '__main__':
     p_list = [1,2,1]
-    p = optional_tree()
+    p = operations_bi_tree()
     p.leetcode_level_build_tree(tree_val=p_list)
 
     q_list = [1,1,2]
-    q = optional_tree()
+    q = operations_bi_tree()
     q.leetcode_level_build_tree(tree_val=q_list)
 
     solution = Solution()
-    result = solution.isSameTree(p=p.t_root, q=q.t_root)
+    result = solution.isSameTree(p=p.tree_root, q=q.tree_root)
     print(result)
 
 
