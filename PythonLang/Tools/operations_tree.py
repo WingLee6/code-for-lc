@@ -167,9 +167,39 @@ class operations_bi_tree:
 
             self.level_order_visit.append(p.val)
 
+    def max_depth(self, root: Optional[TreeNode], depth: int = 0) -> int:
+        """迭代法实现求二叉树的深度
+
+        本例为迭代实现
+        队列实现法见leetcode第104题
+
+        :param root:
+        :param depth:
+        :return:
+        """
+        if root:
+            depth = 1 + max(self.max_depth(root=root.left, depth=depth), self.max_depth(root=root.right, depth=depth))
+
+        return depth
+
+    # @max_depth(root=tree_root)
+    def print_tree(self, root: Optional[TreeNode]):
+        """ 打印树
+
+        例如
+        [3,9,20,null,null,15,7]
+            3
+           / \
+          9  20
+            /  \
+           15   7
+        :return:
+        """
+
+
 
 if __name__ == '__main__':
-    root_list = [1, None, 2, 3, 9, 11]
+    root_list = [3, 9, 20, None, None, 15, 7]
     # root_list = [1, None, 2, 3]
     # root_list = [1]
     # root_list = []
@@ -178,17 +208,23 @@ if __name__ == '__main__':
     root = operations_bi_tree()
     root.leetcode_level_build_tree(tree_val=root_list)
 
-    root.in_order(root=root.tree_root)
-    print(root.in_order_visit)
+    # root.in_order(root=root.tree_root)
+    # print(root.in_order_visit)
+    #
+    # root.pre_order(root=root.tree_root)
+    # print(root.pre_order_visit)
+    #
+    # root.post_order(root=root.tree_root)
+    # print(root.post_order_visit)
+    #
+    # root.level_order(root=root.tree_root)
+    # print(root.level_order_visit)
 
-    root.pre_order(root=root.tree_root)
-    print(root.pre_order_visit)
+    d = root.max_depth(root=root.tree_root)
+    print(d)
 
-    root.post_order(root=root.tree_root)
-    print(root.post_order_visit)
 
-    root.level_order(root=root.tree_root)
-    print(root.level_order_visit)
+
 
 """
 示例1：

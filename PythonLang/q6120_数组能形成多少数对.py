@@ -23,14 +23,11 @@ class Solution:
         return result
 
 
-
-
 if __name__ == '__main__':
     param = [12, 3, 12, 12, 72]
     s = Solution()
     result = s.numberOfPairs(nums=param)
     print(result)
-
 
 
 """
@@ -52,8 +49,6 @@ nums[0] 和 nums[1] 形成一个数对，并从 nums 中移除，nums = [2] 。
 输入：nums = [0]
 输出：[0,1]
 解释：无法形成数对，nums 中剩下 1 个数字。
-
-
 
 """
 
