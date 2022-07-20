@@ -19,7 +19,6 @@
 """
 
 from typing import List, Optional
-
 from PythonLang.Tools.operations_tree import operations_bi_tree
 
 
@@ -50,7 +49,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    param = [-10,-3,0,5,9]
+    param = [-10, -3, 0, 5, 9]
 
     s = Solution()
     result = s.sortedArrayToBST(param)
@@ -59,6 +58,7 @@ if __name__ == '__main__':
     tree = operations_bi_tree()
     tree.level_order(root=result)
     print(tree.level_order_visit)
+
 
 """
 示例 1：

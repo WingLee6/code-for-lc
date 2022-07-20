@@ -197,7 +197,6 @@ class operations_bi_tree:
         """
 
 
-
 if __name__ == '__main__':
     root_list = [3, 9, 20, None, None, 15, 7]
     # root_list = [1, None, 2, 3]
