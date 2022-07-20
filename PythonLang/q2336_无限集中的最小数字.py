@@ -21,7 +21,6 @@ void addBack(int num) 如果正整数 num 不 存在于无限集中，则将一�
 
 """
 from typing import List
-from sortedcontainers import SortedSet as SS
 
 class SmallestInfiniteSet:
 
