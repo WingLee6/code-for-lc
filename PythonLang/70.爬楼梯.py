@@ -18,8 +18,6 @@
 # 爬到楼顶方法个数
 from functools import lru_cache
 
-num = 0
-
 
 class Solution:
     @lru_cache(None)        # 带有装饰器@lru_cache可以利用缓存减少迭代调用时间。不加次方法会超时
