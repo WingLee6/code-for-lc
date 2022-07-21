@@ -23,6 +23,8 @@
 import PythonLang.Tools.operations_node as BasicOperations
 
 # Definition for singly-linked list.
+
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -50,9 +52,6 @@ class Solution:
         return rt
 
 
-
-
-
 # 主函数
 if __name__ == "__main__":
     # Step1: 构建两个测试链表，不带头结点
@@ -64,4 +63,3 @@ if __name__ == "__main__":
     # Step2. 将链表带入算法
     result_listNode = Solution().addTwoNumbers(l1=l1_listNode, l2=l2_listNode)
     BasicOperations.LinkList().travelList(result_listNode)
-

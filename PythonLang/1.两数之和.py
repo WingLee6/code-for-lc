@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2022/1/1 
+# @Time    : 2022/1/1
 # @Author  : li
 # @FileName: q1_twoSum.py
 # @Desc    : 两数之和
@@ -19,6 +19,7 @@
 """
 
 from typing import List
+
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
