@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2022/3/5 
-# @Author  : li
-# @FileName: BasicOperationsListNode.py
+# @Author  : lee
+# @FileName: operations_node.py
 # @Desc    : 链表相关基础操作
 
 
 from typing import List, Type
-
 
 # 定义单链表
 class ListNode(object):
@@ -38,7 +37,7 @@ class DListNode(object):
 class LinkList(object):
     def __init__(self):
         """
-        初始化头节点，默认None
+        初始化头节点, 默认None
         """
         self.head = None
 

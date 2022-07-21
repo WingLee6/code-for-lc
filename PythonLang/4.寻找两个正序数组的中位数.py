@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2022/3/10 
-# @Author  : li
+# @Author  : lee
 # @FileName: q4_寻找两个正序数组的中位数.py
 # @Desc    : 寻找两个正序数组的中位数
 
