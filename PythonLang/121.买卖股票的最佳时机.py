@@ -9,8 +9,7 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         best_sale = 0
         input_day = len(prices)-1
-        if input_day < 1:
-            return 0
+    
         while input_day != 0:
             input_day = prices.index(min(prices[:input_day]))
             output_day = prices.index(max(prices[input_day:]))
