@@ -14,7 +14,6 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        self.node_queue = []
 
 
 class operations_bi_tree:
@@ -34,6 +33,7 @@ class operations_bi_tree:
         post_order_visit: 列表，表示二叉树的后序遍历序列
         level_order_visit: 列表，表示二叉树的层次遍历序列
     """
+
     def __init__(self):
         self.tree_root = None
         self.pre_order_visit = []
@@ -102,7 +102,7 @@ class operations_bi_tree:
             #     else:
             #         print(i)
             # print("------------------")
-            
+
     def pre_order(self, root: Optional[TreeNode]):
         """前序遍历二叉树
 
@@ -178,7 +178,8 @@ class operations_bi_tree:
         :return:
         """
         if root:
-            depth = 1 + max(self.max_depth(root=root.left, depth=depth), self.max_depth(root=root.right, depth=depth))
+            depth = 1 + max(self.max_depth(root=root.left, depth=depth),
+                            self.max_depth(root=root.right, depth=depth))
 
         return depth
 
@@ -221,8 +222,6 @@ if __name__ == '__main__':
 
     d = root.max_depth(root=root.tree_root)
     print(d)
-
-
 
 
 """
