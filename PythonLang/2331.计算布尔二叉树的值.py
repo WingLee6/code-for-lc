@@ -11,6 +11,8 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
         if not root:
@@ -25,6 +27,5 @@ class Solution:
                 return self.evaluateTree(root.left) or self.evaluateTree(root.right)
             else:
                 return self.evaluateTree(root.left) and self.evaluateTree(root.right)
-            
-# @lc code=end
 
+# @lc code=end

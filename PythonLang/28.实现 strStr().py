@@ -33,8 +33,6 @@ if __name__ == '__main__':
     print(result)
 
 
-
-
 """
 示例 1：
 输入：haystack = "hello", needle = "ll"

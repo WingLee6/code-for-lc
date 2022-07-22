@@ -39,18 +39,17 @@ class Solution:
 
 
 if __name__ == '__main__':
-    p_list = [1,2,1]
+    p_list = [1, 2, 1]
     p = operations_bi_tree()
     p.leetcode_level_build_tree(tree_val=p_list)
 
-    q_list = [1,1,2]
+    q_list = [1, 1, 2]
     q = operations_bi_tree()
     q.leetcode_level_build_tree(tree_val=q_list)
 
     solution = Solution()
     result = solution.isSameTree(p=p.tree_root, q=q.tree_root)
     print(result)
-
 
 
 """
