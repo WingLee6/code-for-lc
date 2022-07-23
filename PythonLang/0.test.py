@@ -22,12 +22,6 @@ if __name__ == '__main__':
     result = solution.test(a=param)
     print(result)
 
-    dp = [[0]* len([7,1,5,3,6,4]))] * 3
-    for input in range(len([7,1,5,3,6,4])-1):
-    # print(input)
-        for output in range(input+1, len([7,1,5,3,6,4])):
-            print(output)
-        print('---------------')
 
 
 
