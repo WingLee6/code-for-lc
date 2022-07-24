@@ -1,4 +1,6 @@
 from typing import List, Optional
+
+from matplotlib import pyplot as plt
 from Tools.operations_node import ListNode
 from Tools.operations_tree import operations_bi_tree
 
@@ -65,8 +67,6 @@ if __name__ == '__main__':
 
     # 输入：
     # "abccbaacz"
-    # 输出：
-    # "a"
     # 预期：
     # "c"
 
@@ -79,3 +79,10 @@ if __name__ == '__main__':
     #     num += t_grid.count(cow)
     #
     # print(num)
+
+    
+
+
+
+
+    
