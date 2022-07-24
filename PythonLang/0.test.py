@@ -39,20 +39,20 @@ class FoodRatings:
 if __name__ == '__main__':
 
     # 周赛待整理
-    foods = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
-    cuisines = ["korean", "japanese", "japanese",
-                "greek", "japanese", "korean"]
-    ratings = [9, 12, 8, 15, 14, 7]
+    # foods = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
+    # cuisines = ["korean", "japanese", "japanese",
+    #             "greek", "japanese", "korean"]
+    # ratings = [9, 12, 8, 15, 14, 7]
 
-    obj = FoodRatings(foods, cuisines, ratings)
-    param_2 = obj.highestRated("korean")
-    print(param_2)
-    param_2 = obj.highestRated("japanese")
-    print(param_2)
-    obj.changeRating("sushi", 16)
-    obj.changeRating("ramen", 16)
-    param_2 = obj.highestRated("japanese")
-    print(param_2)
+    # obj = FoodRatings(foods, cuisines, ratings)
+    # param_2 = obj.highestRated("korean")
+    # print(param_2)
+    # param_2 = obj.highestRated("japanese")
+    # print(param_2)
+    # obj.changeRating("sushi", 16)
+    # obj.changeRating("ramen", 16)
+    # param_2 = obj.highestRated("japanese")
+    # print(param_2)
 
     # param = [2, 7, 11, 15]
     # tree = operations_bi_tree()
@@ -63,7 +63,7 @@ if __name__ == '__main__':
     # result = solution.test(a=param)
     # print(result)
 
-    print("-----------------------------------")
+
 
     # 输入：
     # "abccbaacz"
@@ -80,9 +80,38 @@ if __name__ == '__main__':
     #
     # print(num)
 
-    
+
+
+    print("-----------------------------------")
+
+    import bisect
+    arr = [1, 13, 13, 13, 18, 20, 55]
+    idx_left = bisect.bisect_left(arr, 3)
+    print(idx_left)
+
+    idx_left = bisect.bisect_left(arr, 13)
+    print(idx_left)
 
 
 
+    idx_right = bisect.bisect_right(arr, 13)
+    print(idx_right)
 
-    
+    idx_right = bisect.bisect_right(arr, 15)
+    print(idx_right)
+
+    # 用可变序列内置的insert方法插入
+    arr.insert(idx_left, 13)
+    print(arr)
+
+
+L = [1,3,3,4,6,8,12,15]
+x_sect_point = bisect.bisect_left(L, 3)  # 在L中查找x，x存在时返回x左侧的位置，x不存在返回应该插入的位置
+print(x_sect_point)  # 1
+x_sect_point = bisect.bisect_left(L, 5)  # 在L中查找x，x存在时返回x左侧的位置，x不存在返回应该插入的位置
+print(x_sect_point)  # 4
+
+x_sect_point = bisect.bisect_right(L, 3)  # 在L中查找x，x存在时返回x右侧的位置，x不存在返回应该插入的位置
+print(x_sect_point)  # 3
+x_sect_point = bisect.bisect_right(L, 5)  # 在L中查找x，x存在时返回x右侧的位置，x不存在返回应该插入的位置
+print(x_sect_point)  # 4
