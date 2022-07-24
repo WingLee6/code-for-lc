@@ -83,35 +83,3 @@ if __name__ == '__main__':
 
 
     print("-----------------------------------")
-
-    import bisect
-    arr = [1, 13, 13, 13, 18, 20, 55]
-    idx_left = bisect.bisect_left(arr, 3)
-    print(idx_left)
-
-    idx_left = bisect.bisect_left(arr, 13)
-    print(idx_left)
-
-
-
-    idx_right = bisect.bisect_right(arr, 13)
-    print(idx_right)
-
-    idx_right = bisect.bisect_right(arr, 15)
-    print(idx_right)
-
-    # 用可变序列内置的insert方法插入
-    arr.insert(idx_left, 13)
-    print(arr)
-
-
-L = [1,3,3,4,6,8,12,15]
-x_sect_point = bisect.bisect_left(L, 3)  # 在L中查找x，x存在时返回x左侧的位置，x不存在返回应该插入的位置
-print(x_sect_point)  # 1
-x_sect_point = bisect.bisect_left(L, 5)  # 在L中查找x，x存在时返回x左侧的位置，x不存在返回应该插入的位置
-print(x_sect_point)  # 4
-
-x_sect_point = bisect.bisect_right(L, 3)  # 在L中查找x，x存在时返回x右侧的位置，x不存在返回应该插入的位置
-print(x_sect_point)  # 3
-x_sect_point = bisect.bisect_right(L, 5)  # 在L中查找x，x存在时返回x右侧的位置，x不存在返回应该插入的位置
-print(x_sect_point)  # 4
