@@ -36,8 +36,73 @@ class FoodRatings:
 
         return self.foods[max_food_id] if max_food_id != -1 else None
 
+print("-----------------")
 
-if __name__ == '__main__':
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class CBTInserter:
+
+    def __init__(self, root: TreeNode):
+        self.root = root  
+        self.queue = []
+
+        if root:
+            p = root
+            self.queue.append(p)
+            while self.queue:
+                p = self.queue[0]
+                if p.left:
+                    self.queue.append(p.left)
+                if p.right:
+                    self.queue.append(p.right)
+                    self.queue.pop(0)
+                if not (p.left and p.right):
+                    break
+                    
+        
+    def insert(self, val: int) -> int:
+        q = TreeNode()
+        q.val = val
+        if not self.root:
+            self.root = q
+            self.queue.append(self.root)
+            return None
+
+        elif self.root:
+            p = self.queue[0]
+            if not p.left:
+                p.left = q
+                self.queue.append(p.left)
+            elif not p.right:
+                p.right = q
+                self.queue.append(p.right)
+                self.queue.pop(0)
+        
+            return p.val
+
+    def get_root(self) -> TreeNode:
+        return self.root
+
+
+# Your CBTInserter object will be instantiated and called as such:
+
+from Tools.operations_tree import operations_bi_tree
+print("-----------------")
+tree = operations_bi_tree()
+tree.leetcode_level_build_tree([1, 2])
+
+obj = CBTInserter(tree.tree_root)
+param_1 = obj.insert(2)
+print(param_1)
+param_2 = obj.get_root()
+print(param_2)
+
+
+
+# if __name__ == '__main__':
 
     # 周赛待整理
     # foods = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
@@ -83,8 +148,6 @@ if __name__ == '__main__':
 
 
 
-    print("-----------------------------------")
 
-    
 
     
