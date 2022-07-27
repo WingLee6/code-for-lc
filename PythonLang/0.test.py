@@ -102,7 +102,7 @@ print(param_2)
 
 
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 
     # 周赛待整理
     # foods = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
@@ -135,17 +135,10 @@ print(param_2)
     # "abccbaacz"
     # 预期：
     # "c"
-
-    # grid = [[3, 1, 2, 2], [1, 4, 4, 5], [2, 4, 2, 2], [2, 4, 2, 2]]
-    # grid = [[3, 2, 1], [1, 7, 6], [2, 7, 7]]
-    # num = 0
-    # t_grid = list(map(list, zip(*grid)))
-    #
-    # for cow in grid:
-    #     num += t_grid.count(cow)
-    #
-    # print(num)
-
+    # input = Solution()
+    # input.test(a=param)
+    nums = [1, 3, 4, 5, 6, 7, 8, 9]
+    print(nums[len(nums):])
 
 
 

@@ -37,6 +37,7 @@ class Solution:
         print(nums)
         return len(nums)
 
+
 if __name__ == '__main__':
     input = [0,1,2,2,3,0,4,2]
     input2 = 2
