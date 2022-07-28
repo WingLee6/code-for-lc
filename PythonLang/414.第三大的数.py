@@ -6,6 +6,7 @@
 
 # @lc code=start
 
+from typing import List
 from sortedcontainers import SortedList
 
 class Solution:
