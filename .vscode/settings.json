@@ -4,5 +4,8 @@
         "iostream": "cpp",
         "string": "cpp",
         "iosfwd": "cpp"
-    }
+    },
+    "python.analysis.extraPaths": [
+        "./PythonLang"
+    ]
 }
