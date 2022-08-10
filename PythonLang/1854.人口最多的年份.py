@@ -7,6 +7,7 @@
 # @lc code=start
 from collections import defaultdict
 from typing import List
+from sortedcontainers import SortedDict
 
 
 class Solution:
@@ -15,11 +16,14 @@ class Solution:
         for age in logs:
             for y in range(age[0], age[1]):
                 dic[y] += 1
-
-        return int(str(sorted(dic.items()))[str(sorted(dic.items())).find(", " + str(max(dic.values())) + ")")-4: str(sorted(dic.items())).find(", " + str(max(dic.values())) + ")")])
+        
+        return [key for key, value in SortedDict(dic).items() if value == max(dic.values())][0]
 
 # @lc code=end
 
 
+param = [[1950, 1961], [1960, 1971], [1970, 1981]]
 s = Solution()
-print(s.maximumPopulation([[2000,2001]]))
+print(s.maximumPopulation(param))
+
+
